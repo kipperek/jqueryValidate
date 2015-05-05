@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Jquery validation plugin</title>
+	<script src="jquery.js"></script>
+	<script src="jqvalidate.js"></script>
+	<style>
+		body{
+			font-family: Arial;	
+			font-weight: 300;
+		}
+		form>div{
+			margin-bottom: 5px;
+		}
+		span.label{
+			width:120px;
+			display: inline-block;
+		}
+	</style>
+</head>
+<body>
+<form id="myForm">
+	<div><span class="label">Name:</span><input name="name" data-validate="/^[A-ZĄĆĘŁŃÓŚŹŻ][a-ząćęłńóśźż]+$/"/></div>
+	<div><span class="label">Postal code:</span><input name="postalcode" data-validate="postalcode"/></div>
+	<div><span class="label">Password:</span><input name="password" data-validate="password"/></div>
+	<div><span class="label">Email:</span><input name="email" data-validate="email"/></div>
+	<div><input type="submit" value="Wyślij" /></div>
+</form>
+
+<script>
+	$(document).ready(function(){
+		$('#myForm').jqValidate({
+			block_sending: true,
+			pass_min_chars: 8
+		});
+	});
+</script>
+</body>
+</html>
