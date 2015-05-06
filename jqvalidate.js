@@ -28,7 +28,15 @@
 
     var validatePostalCode = function(text){
         var pattern = /^[0-9]{2}-[0-9]{3}$/gi;
-        return pattern.test(text);
+
+        if(pattern.test(text)){
+
+
+
+            
+        }
+
+        return false;
     };
 
     var validateRegExp = function(text, regexp){
