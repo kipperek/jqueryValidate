@@ -82,7 +82,6 @@
 	  	var settings = $.extend({
             validate_on_start: false,
             block_sending: false,
-            pass_min_chars: 6,
             entropy: 60
         }, options ),
         form = this;
