@@ -17,11 +17,26 @@
 			width:120px;
 			display: inline-block;
 		}
+
+		input{
+			border: 1px solid grey;
+			width: 150px;
+			padding: 3px;
+		}
+
+		input.error{
+			border: 1px solid red;
+			outline-color: red;
+		}
+		input.ok{
+			border: 1px solid lime;
+			outline-color: lime;
+		}
 	</style>
 </head>
 <body>
 <form id="myForm">
-	<div><span class="label">Name:</span><input name="name" data-validate="/^[A-ZĄĆĘŁŃÓŚŹŻ][a-ząćęłńóśźż]+$/"/></div>
+	<div><span class="label">Name:</span><input name="name" data-validate="^[A-ZĄĆĘŁŃÓŚŹŻ]{1,1}[a-ząćęłńóśźż]+$"/></div>
 	<div><span class="label">Postal code:</span><input name="postalcode" data-validate="postalcode"/></div>
 	<div><span class="label">Password:</span><input name="password" data-validate="password"/></div>
 	<div><span class="label">Email:</span><input name="email" data-validate="email"/></div>
@@ -31,6 +46,7 @@
 <script>
 	$(document).ready(function(){
 		$('#myForm').jqValidate({
+			validate_on_start: true,
 			block_sending: true,
 			pass_min_chars: 8
 		});
