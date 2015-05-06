@@ -11,18 +11,18 @@
 	- you own pattern for example: [A-Z]*
 
 - In your script add to form jQuery object .jqValidate(setings), for example:
-	``javascript
+```javascript
 	$('#myForm').jqValidate({
 			validate_on_start: true,
 			block_sending: true
 	});
-	``
+```
 
 ## SETTINGS
-``javascript
+```javascript
 	{
         validate_on_start: false, //validate your form right after page loads
         block_sending: false,     //make submit disabled when form not valid
         entropy: 60				  //make your password valid if its entropy reaches 60
     }
-``
+```
